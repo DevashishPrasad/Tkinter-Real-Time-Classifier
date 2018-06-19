@@ -2,8 +2,8 @@
 This is a tkinter based GUI for tensorflow classifier to classify various products in real time
 
 ### You need to have these files before executing the file-
-  model_file (By default at "tf_files/retrained_graph.pb")
-  label_file (By default at "tf_files/retrained_labels.txt")
+model_file (By default at "tf_files/retrained_graph.pb") And
+label_file (By default at "tf_files/retrained_labels.txt")
 
 ### Other Dependencies 
   1. Python
