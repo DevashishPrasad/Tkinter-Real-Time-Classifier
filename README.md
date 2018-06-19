@@ -18,6 +18,11 @@ You need to click *predict* button to make a prediction
 Results will be shown on the right hand side. Green if the label is other than *not product* which means a false product. 
 Red if object or product is a false product and orange for *not aligned*
 
+### Sample screens based on my tensorflow classifier
+<img src="images/pic1" alt="Picture not supported by your browser"/>
+<img src="images/pic2" alt="Picture not supported by your browser"/>
+<img src="images/pic3" alt="Picture not supported by your browser"/>
+
 Youtube based video demonstartion will be comming soon
 
 
