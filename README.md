@@ -15,7 +15,7 @@ This is a tkinter based GUI for tensorflow classifier to classify various produc
 Once you have fulfilled the above requirements, go ahead and execute the `gui_for_classifier.py` file
 You will see the live video feed from your webcam in the frame on left side
 You need to click *predict* button to make a prediction
-Results will be shown on the right hand side. Green if the label is other than *not product* which means a false product. 
+Results will be shown on the right hand side. You can change appearance of your reults based on your labels. I have set Green if the label is other than *not product* which means product is a good product or correct product. 
 Red if object or product is a false product and orange for *not aligned*
 
 ### Sample screens based on my tensorflow classifier
