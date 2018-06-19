@@ -92,41 +92,44 @@ def main():
   
   cnt = 0
 
+  # This code depends on your labels...
+  # Here i have 6 labels
   for i in range(6):
     temp = str(template.format(labels[i], results[i])).split("=")
     
     if( Decimal(temp[1]) > 0.8500 ):
       if( temp[0] == "not product "):
         label4["fg"] = "red"
-        label4["text"] = "Not Product"
+        label4["text"] = "Not Object"
         cnt = 1   
         break
       if( temp[0] == "not aligned "):
         label4["fg"] = "orange"
-        label4["text"] = "Not Aligned"
+        label4["text"] = "Improper Alignment"
         cnt = 1   
         break 
 
       label4["fg"] = "green"
-      label4["text"] = "Good Product ( " + temp[0] + ")"
+      label4["text"] = "Correct Object ( " + temp[0] + ")"
       cnt = 1
 
   if(cnt == 0):
     label4["fg"] = "red"
-    label4["text"] = "Not Product"
+    label4["text"] = "Not Object"
         
  
   label3["text"] = myString
   
-
+# Tkinter code (GUI) starts
 root = Tk()
+# for full screen, change it with your screen ratio
 root.geometry("1366x768")
 
 app = Frame(root, bg="white")
 app.grid()
 
-#kneo logo
-path1 = "/home/kneo/Final-PLC/kneoLogo.png"
+# Logo image
+path1 = "path-to-image"
 disp_img1 = ImageTk.PhotoImage(Image.open(path1))
 logopanel = Label(app, image = disp_img1)
 logopanel.image = disp_img1
@@ -134,11 +137,12 @@ logopanel.grid(row = 0 , column = 1 , padx = 490)
 
 button = Button(app, text = "Predict" , command = main, height = 2 , width = 15,  font=("Times", 16))
 
-#Capture video frames
+# Capture video frames
 lmain = Label(app)
 lmain.grid(row=1, column=0, padx=50)
 cap = cv2.VideoCapture(1)
 
+# function for showing live video feed
 def show_frame():
     _, frame = cap.read()
     cv2image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGBA)
@@ -147,7 +151,6 @@ def show_frame():
     lmain.imgtk = imgtk
     lmain.configure(image=imgtk)
     lmain.after(1, show_frame) 
-
 
 button.place(x = 910 , y = 550)
 
